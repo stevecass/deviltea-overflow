@@ -5,7 +5,7 @@ RSpec.describe QuestionsController, type: :controller do
   describe "GET #index" do
     it "assigns all questions to variable questions" do
       get :index
-      expect(assigns(:questions)).to eq Question.all
+      expect(assigns(:questions)).to match Question.sort_by_most_recent
     end
   end
 
